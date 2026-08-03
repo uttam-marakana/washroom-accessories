@@ -1,0 +1,21 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+dist-ssr
+
+# Local env / lockfiles
+*.local
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+
+# Public/static assets
+public
+
+# Editor & OS
+.vscode
+.idea
+.DS_Store
+
