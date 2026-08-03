@@ -1,0 +1,24 @@
+.about__content {
+  max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+@media (max-width: 992px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
