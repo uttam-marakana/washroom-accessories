@@ -1,0 +1,39 @@
+.page-banner {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding-block: var(--space-16);
+}
+
+.page-banner__inner {
+  text-align: center;
+}
+
+.page-banner__title {
+  color: var(--color-white);
+  font-size: var(--text-5xl);
+  margin-bottom: var(--space-2);
+}
+
+.page-banner__subtitle {
+  color: color-mix(in srgb, var(--color-white) 80%, transparent);
+  max-width: 60ch;
+  margin-inline: auto;
+}
+
+.page-banner .breadcrumb {
+  justify-content: center;
+  margin-top: var(--space-4);
+}
+
+.page-banner .breadcrumb__link {
+  color: color-mix(in srgb, var(--color-white) 70%, transparent);
+}
+
+.page-banner .breadcrumb__link:hover,
+.page-banner .breadcrumb__link[aria-current='page'] {
+  color: var(--color-white);
+}
+
+.page-banner .breadcrumb__separator {
+  color: color-mix(in srgb, var(--color-white) 50%, transparent);
+}

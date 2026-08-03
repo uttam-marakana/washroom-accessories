@@ -1,0 +1,21 @@
+.image-wrapper {
+  overflow: hidden;
+  position: relative;
+  background-color: var(--color-light);
+}
+
+.image-wrapper--fixed {
+  position: relative;
+}
+
+.image-wrapper__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-base);
+}
+
+.image-wrapper:hover .image-wrapper__img {
+  transform: scale(1.04);
+}

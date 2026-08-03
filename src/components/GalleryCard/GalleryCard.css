@@ -1,0 +1,22 @@
+.gallery-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.gallery-card__image {
+  aspect-ratio: 4 / 3;
+}
+
+.gallery-card__caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: var(--space-4);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.gallery-card__category {
+  color: var(--color-white);
+  font-weight: 500;
+  font-size: var(--text-sm);
+}

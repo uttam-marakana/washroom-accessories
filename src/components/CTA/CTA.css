@@ -1,0 +1,39 @@
+.cta {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  color: var(--color-white);
+  padding-block: var(--space-16);
+}
+
+.cta__inner {
+  text-align: center;
+}
+
+.cta__title {
+  color: var(--color-white);
+  font-size: var(--text-4xl);
+  margin-bottom: var(--space-4);
+}
+
+.cta__description {
+  color: color-mix(in srgb, var(--color-white) 85%, transparent);
+  max-width: 60ch;
+  margin-inline: auto;
+  margin-bottom: var(--space-8);
+}
+
+.cta__actions {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 576px) {
+  .cta__actions {
+    flex-direction: column;
+  }
+}
