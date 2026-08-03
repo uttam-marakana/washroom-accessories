@@ -1,0 +1,22 @@
+/**
+ * Global responsive adjustments.
+ * Component-level responsive rules live in each component's CSS file.
+ */
+@media (max-width: 992px) {
+  :root {
+    --container-padding: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 1rem;
+  }
+
+  h1 {
+    font-size: var(--text-4xl);
+  }
+  h2 {
+    font-size: var(--text-3xl);
+  }
+}

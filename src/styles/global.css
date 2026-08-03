@@ -1,0 +1,8 @@
+/**
+ * Global layout & app-wide styles.
+ */
+.site-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
