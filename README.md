@@ -1,16 +1,30 @@
 # Washroom Accessories
 
-Production-ready React foundation for a washroom accessories storefront.
-This is a clean, minimal setup — no pages or features are built yet, so new
-features can be added incrementally on top of a solid base.
+A production-ready React website for a Washroom Accessories company. Built with
+React, Vite, React Router DOM, and Core CSS. No heavy UI frameworks — just
+clean, scalable, hand-crafted CSS.
 
-## Stack
+## Features
 
-- **Vite** + **React 19** (JavaScript)
+- **9 pages**: Home, About Us, Products, Product Details, Gallery, Contact,
+  Privacy Policy, Terms & Conditions, and 404.
+- **SEO-ready**: Every page includes Helmet-managed title, description,
+  keywords, canonical URL, Open Graph, Twitter Cards, and structured data.
+- **Lazy-loaded routes** via `React.lazy` + `Suspense` for optimal performance.
+- **Reusable, modular components** — single responsibility, no duplication.
+- **Responsive design** tuned for breakpoints 1440, 1200, 992, 768, 576, 375, 320.
+- **Accessibility-first** with semantic HTML, ARIA labels, focus states, and
+  reduced-motion support.
+- **Error boundary** and loading states for graceful failure handling.
+
+## Tech Stack
+
+- **React 19** + **Vite 8**
 - **React Router DOM** — declarative routing
 - **React Helmet Async** — per-page head/metadata management
 - **React Icons** — icon library
-- **ESLint** + **Prettier** — linting and formatting
+- **Core CSS** — CSS variables, BEM naming, modular stylesheets
+- **ESLint** + **Prettier** — code quality and formatting
 
 ## Scripts
 
@@ -28,39 +42,65 @@ features can be added incrementally on top of a solid base.
 
 ```
 src/
-├── assets/            # Static images & assets
-├── components/
-│   ├── layout/        # Header, Footer, MainLayout
-│   └── ui/            # Reusable UI primitives (ScrollToTop, ...)
-├── config/            # Site-wide configuration (site.js)
-├── lib/               # Helper utilities (utils.js)
-├── pages/             # Route-level pages (Home, NotFound, ...)
-├── routes/            # Central route configuration (index.jsx)
+├── assets/            # Logos, images (organized by type)
+├── components/        # Reusable UI components (Button, Card, FAQ, ...)
+│   ├── Button/
+│   ├── ProductCard/
+│   ├── ContactForm/
+│   └── ...            # Each has its own .jsx + .css
+├── constants/         # App-level constants (routes, colors, breakpoints)
+├── context/           # React context providers (App, Theme, Product)
+├── data/              # Static data (products, categories, testimonials, ...)
+├── hooks/             # Custom hooks (useScrollTop, useMediaQuery, ...)
+├── layouts/           # Layout components (Header, Footer, MainLayout, Sidebar)
+├── pages/             # Route pages (Home, About, Products, ...)
+│   ├── Home/
+│   ├── Products/
+│   └── ...
+├── router/            # Route definitions
+├── seo/               # SEO component + per-page config
+├── services/          # Data access layer (products, contact, api)
 ├── styles/            # Global CSS architecture
 │   ├── index.css      # Entry point (imports all partials)
 │   ├── variables.css  # Design tokens (colors, spacing, type)
-│   ├── base.css       # Reset & base element styles
-│   ├── layout.css     # Layout primitives (header, footer, container)
-│   └── utilities.css  # Utility classes
-├── App.jsx            # App root (router + scroll-to-top)
+│   ├── reset.css      # Modern CSS reset
+│   ├── typography.css # Base typography
+│   ├── layout.css     # Layout primitives
+│   ├── animations.css # Keyframe animations + reduced-motion support
+│   ├── utilities.css  # Utility classes
+│   ├── responsive.css # Global responsive adjustments
+│   └── global.css     # App-wide layout styles
+├── utils/             # Helper functions (helpers, formatters, validators, ...)
+├── App.jsx            # App root (providers + router + error boundary)
 └── main.jsx           # Entry point (HelmetProvider)
 ```
 
 ## Conventions
 
 - **Path alias**: `@` resolves to `src` (e.g. `import X from '@/components/...'`).
-- **Routing**: Add routes in `src/routes/index.jsx`. Routes are wrapped in
-  `MainLayout`, which renders the shared `Header`/`Footer` around an `Outlet`.
-- **Site config**: Centralize site metadata and nav links in
-  `src/config/site.js`. The header nav renders from `siteConfig.nav`.
-- **Per-page metadata**: Use `react-helmet-async`'s `<Helmet>` inside each page.
-- **Styling**: Use the global CSS architecture in `src/styles/`. Store
-  component-specific styles in `src/components/...` alongside components.
-- **Utilities**: Small helpers live in `src/lib/utils.js` (e.g. `cn`).
+- **Routing**: Add routes in `src/router/AppRoutes.jsx`. Pages are
+  lazy-loaded and wrapped in `MainLayout`.
+- **SEO**: Use the `SEO` component (from `src/seo/SEO.jsx`) in every page.
+  Configure per-page metadata in `src/seo/seoConfig.js`.
+- **Data**: Centralize static data in `src/data/`. Access via services in
+  `src/services/` so component call sites stay decoupled from the source.
+- **Styling**: Use the global CSS architecture in `src/styles/`. Colocate
+  component-specific styles in each component's own `.css` file using BEM
+  naming.
+- **Constants**: Reference routes, colors, and breakpoints from
+  `src/constants/` instead of hardcoding strings.
 
 ## Adding a New Page
 
-1. Create a page component in `src/pages/`.
-2. Add a `<Route>` entry in `src/routes/index.jsx`.
-3. Optionally add a nav link in `src/config/site.js`.
-4. Set page metadata with `<Helmet>`.
+1. Create a page component in `src/pages/<PageName>/`.
+2. Add a lazy import and `<Route>` in `src/router/AppRoutes.jsx`.
+3. Add the page to the sitemap (`public/sitemap.xml`) and nav config
+   (`src/data/navigation.js`) if needed.
+4. Configure SEO in `src/seo/seoConfig.js` and use the `SEO` component.
+
+## Deployment
+
+The project is ready to deploy to any static host (Netlify, Vercel, S3, etc.).
+Update the site URL in `src/constants/appConfig.js` and the `.env.*` files, then
+run `yarn build` and deploy the `dist/` folder. Ensure your host rewrites all
+routes to `index.html` for client-side routing.
