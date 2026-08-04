@@ -1,4 +1,3 @@
-
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FiSearch, FiX, FiArrowRight } from 'react-icons/fi';
@@ -55,7 +54,7 @@ function SearchBar({
   const [activeIndex, setActiveIndex] = useState(-1);
 
   const debouncedQuery = useDebounce(query, 300);
-// Keep a ref to the latest onSelect/onSearch so the debounced effect
+  // Keep a ref to the latest onSelect/onSearch so the debounced effect
   // and key handlers always see the current props.
   const handlersRef = useRef({ onSelect, onSearch });
   useEffect(() => {
@@ -78,47 +77,7 @@ function SearchBar({
         : productService.searchAll(debouncedQuery);
       if (!cancelled) {
         setResults(next);
-        setIsLoading(false);
-      }
-    };
-
-    setIsLoading(true);
-    run().catch(() => {
-      if (!cancelled) {
-        setResults({ products: [], categories: [], tags: [] });
-        setIsLoading(false);
-      }
-    });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [debouncedQuery, hasQuery, searchFn, showResults]);
-
-  // Keep a ref to the latest onSelect/onSearch so the debounced effect
-  // and key handlers always see the current props.
-  const handlersRef = useRef({ onSelect, onSearch });
-  handlersRef.current = { onSelect, onSearch };
-
-  const hasQuery = query.trim().length > 0;
-
-  // --- Live search (debounced) ---
-  useEffect(() => {
-    if (!showResults || !hasQuery) {
-      setResults({ products: [], categories: [], tags: [] });
-      setIsLoading(false);
-      return;
-    }
-
-    let cancelled = false;
-    setIsLoading(true);
-
-    const run = async () => {
-      const next = searchFn
-        ? await searchFn(debouncedQuery)
-        : productService.searchAll(debouncedQuery);
-      if (!cancelled) {
-        setResults(next);
+        setActiveIndex(-1);
         setIsLoading(false);
       }
     };
@@ -126,6 +85,7 @@ function SearchBar({
     run().catch(() => {
       if (!cancelled) {
         setResults({ products: [], categories: [], tags: [] });
+        setActiveIndex(-1);
         setIsLoading(false);
       }
     });
@@ -159,15 +119,11 @@ function SearchBar({
     return () => document.removeEventListener('mousedown', handleClick);
   }, []);
 
-  // Reset active index whenever the visible results change
-  useEffect(() => {
-    setActiveIndex(-1);
-  }, [debouncedQuery, results]);
-
   const handleInputChange = (e) => {
     const value = e.target.value;
     setQuery(value);
     setActiveIndex(-1);
+    setIsLoading(true);
 
     // Special-character / empty handling:
     // A query with only whitespace or punctuation is treated as empty.
@@ -238,7 +194,7 @@ function SearchBar({
       <div className="search-bar__group" role="group" aria-label={label}>
         <p className="search-bar__group-label">{label}</p>
         <ul className="search-bar__list">
-          {items.map((item, i) => {
+          {items.map((item) => {
             const flatIndex = flatResults.findIndex(
               (r) => r.type === type && r.data === item,
             );
