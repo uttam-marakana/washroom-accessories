@@ -131,4 +131,74 @@
   .site-footer__grid {
     grid-template-columns: 1fr;
   }
+
+  /* Accordion only on mobile */
+  .site-footer__section {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .site-footer__heading {
+    margin-bottom: 0;
+  }
+
+  .site-footer__accordion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-block: var(--space-4);
+    background: none;
+    border: none;
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .site-footer__accordion span {
+    color: var(--color-primary);
+  }
+
+  .site-footer__accordion-icon {
+    flex-shrink: 0;
+    color: var(--color-accent);
+    transition: transform var(--transition-base);
+  }
+
+  .site-footer__section.is-open .site-footer__accordion-icon {
+    transform: rotate(180deg);
+  }
+
+  .site-footer__content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--transition-base);
+  }
+
+  .site-footer__section.is-open .site-footer__content {
+    grid-template-rows: 1fr;
+  }
+
+  .site-footer__content > * {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .site-footer__list,
+  .site-footer__contact {
+    padding-bottom: var(--space-4);
+  }
+}
+
+/* Desktop: hide the accordion button, always show content */
+@media (min-width: 577px) {
+  .site-footer__accordion {
+    display: none;
+  }
+
+  .site-footer__content {
+    display: block;
+  }
 }
