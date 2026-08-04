@@ -18,21 +18,25 @@ import './Products.css';
 function Products() {
   const [searchParams, setSearchParams] = useSearchParams();
   const category = searchParams.get('category') || '';
+  const query = searchParams.get('q') || '';
   const [availability, setAvailability] = useState('');
 
   const allProducts = useMemo(() => productService.getAll(), []);
 
   const filtered = useMemo(() => {
     let result = allProducts;
+    if (query) result = productService.search(query);
     if (category) result = result.filter((p) => p.category === category);
     if (availability)
       result = result.filter((p) => p.availability === availability);
     return result;
-  }, [allProducts, category, availability]);
+  }, [allProducts, query, category, availability]);
 
   const handleCategoryChange = (value) => {
-    if (value) setSearchParams({ category: value });
-    else setSearchParams({});
+    const next = { ...Object.fromEntries(searchParams) };
+    if (value) next.category = value;
+    else delete next.category;
+    setSearchParams(next);
   };
 
   return (
@@ -56,7 +60,7 @@ function Products() {
         </aside>
         <div className="products-layout__main">
           <div className="products-layout__toolbar">
-            <SearchBar />
+            <SearchBar initialQuery={query} />
             <ProductFilter
               category={category}
               onCategoryChange={handleCategoryChange}
