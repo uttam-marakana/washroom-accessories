@@ -244,6 +244,18 @@
   .topbar__social {
     display: none;
   }
+
+  .topbar__inner {
+    display: block;
+  }
+
+  .topbar__contact {
+    flex-direction: column;
+    gap: var(--space-2);
+    align-items: center;
+    padding: 10px;
+  }
+
   .site-header__name {
     font-size: var(--text-sm);
   }
