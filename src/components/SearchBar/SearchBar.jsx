@@ -1,3 +1,4 @@
+
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FiSearch, FiX, FiArrowRight } from 'react-icons/fi';
@@ -23,7 +24,7 @@ import './SearchBar.css';
  * @param {(query: string) => Promise<{products: Array, categories: Array, tags: Array}>} [props.searchFn]
  * @param {(result: object, type: string) => void} [props.onSelect]
  * @param {(query: string) => void} [props.onSearch]
-* @param {string} [props.placeholder]
+ * @param {string} [props.placeholder]
  * @param {boolean} [props.showResults]
  * @param {string} [props.initialQuery]
  * @param {string} [props.className]
@@ -54,6 +55,45 @@ function SearchBar({
   const [activeIndex, setActiveIndex] = useState(-1);
 
   const debouncedQuery = useDebounce(query, 300);
+// Keep a ref to the latest onSelect/onSearch so the debounced effect
+  // and key handlers always see the current props.
+  const handlersRef = useRef({ onSelect, onSearch });
+  useEffect(() => {
+    handlersRef.current = { onSelect, onSearch };
+  }, [onSelect, onSearch]);
+
+  const hasQuery = query.trim().length > 0;
+
+  // --- Live search (debounced) ---
+  useEffect(() => {
+    if (!showResults || !hasQuery) {
+      return;
+    }
+
+    let cancelled = false;
+
+    const run = async () => {
+      const next = searchFn
+        ? await searchFn(debouncedQuery)
+        : productService.searchAll(debouncedQuery);
+      if (!cancelled) {
+        setResults(next);
+        setIsLoading(false);
+      }
+    };
+
+    setIsLoading(true);
+    run().catch(() => {
+      if (!cancelled) {
+        setResults({ products: [], categories: [], tags: [] });
+        setIsLoading(false);
+      }
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [debouncedQuery, hasQuery, searchFn, showResults]);
 
   // Keep a ref to the latest onSelect/onSearch so the debounced effect
   // and key handlers always see the current props.
@@ -239,7 +279,11 @@ function SearchBar({
   const showDropdown = showResults && isOpen && hasQuery;
 
   return (
-    <div ref={containerRef} className={cn('search-bar', className)} role="search">
+    <div
+      ref={containerRef}
+      className={cn('search-bar', className)}
+      role="search"
+    >
       <FiSearch
         className="search-bar__icon"
         aria-hidden="true"
@@ -331,4 +375,3 @@ function SearchBar({
 }
 
 export default SearchBar;
-
