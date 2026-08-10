@@ -21,7 +21,9 @@ function TopBar() {
           </a>
         </div>
         <div className="topbar__social">
-          <span className="topbar__text">Get a Quote</span>
+          <span className="topbar__text">
+            <a href="/contact">Get a Quote </a>
+          </span>
         </div>
       </div>
     </div>

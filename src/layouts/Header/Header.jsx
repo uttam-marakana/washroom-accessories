@@ -11,6 +11,8 @@ import MegaMenu from './MegaMenu';
 import MobileMenu from './MobileMenu';
 import './Header.css';
 
+import logo from '../../../public/images/products Images/logo.png';
+
 /**
  * Sticky site header with top bar, navigation, mega menu, and mobile menu.
  */
@@ -24,8 +26,11 @@ function Header() {
       <header className="site-header">
         <div className="container site-header__inner">
           <Link to="/" className="site-header__brand">
-            <span className="site-header__logo">WA</span>
-            <span className="site-header__name">Washroom Accessories</span>
+            <img
+              src={logo}
+              alt="Washroom Accents"
+              className="site-header__brand-logo"
+            />
           </Link>
 
           <Navigation
