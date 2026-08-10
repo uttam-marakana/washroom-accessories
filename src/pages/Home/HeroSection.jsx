@@ -1,15 +1,34 @@
 import Hero from '@/components/Hero/Hero';
 
 /**
- * Home hero section wrapper.
+ * Home hero section wrapper — auto-sliding hero carousel.
  */
+const heroSlides = [
+  {
+    image:
+      '/images/products%20Images/Home-hero-banner1.png',
+    title: 'Premium Washroom Accessories for Modern Living',
+    subtitle:
+      'Discover durable, elegant, and beautifully crafted washroom fixtures for your home and business.',
+  },
+  {
+    image:
+      '/images/products%20Images/Home-hero-banner2.png',
+    title: 'Elevate Your Bathroom Experience',
+    subtitle:
+      'Explore our curated collection of premium fixtures designed to blend style with functionality.',
+  },
+  {
+    image:
+      '/images/products%20Images/Home-hero-banner3.png',
+    title: 'Style Meets Durability',
+    subtitle:
+      'From grab bars to towel rods, find the perfect accessories to complete your space.',
+  },
+];
+
 function HeroSection() {
-  return (
-    <Hero
-      title="Premium Washroom Accessories for Modern Living"
-      subtitle="Discover durable, elegant, and beautifully crafted washroom fixtures for your home and business."
-    />
-  );
+  return <Hero slides={heroSlides} interval={5000} />;
 }
 
 export default HeroSection;
