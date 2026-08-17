@@ -13,4 +13,4 @@ export const FORM_STATUS = {
   ERROR: 'error',
 };
 
-export const DEFAULT_IMAGE = '/images/placeholders/no-image.webp';
+export const DEFAULT_IMAGE = '/images/placeholders/no-image.svg';
