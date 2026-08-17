@@ -11,7 +11,7 @@ import MegaMenu from './MegaMenu';
 import MobileMenu from './MobileMenu';
 import './Header.css';
 
-import logo from '../../../public/images/products Images/logo.png';
+import logo from '../../../public/images/storeImages/logo.png';
 
 /**
  * Sticky site header with top bar, navigation, mega menu, and mobile menu.
