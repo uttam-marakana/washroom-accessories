@@ -12,10 +12,10 @@ export const products = [
     name: 'Bali Soap Holder',
     category: 'soap-holders',
     sku: 'WA-SH-001',
-    image: '/images/products Images/bali-soap-holder.png',
+    image: '/images/storeImages/products/bali-soap-holder.png',
     gallery: [
-      '/images/products Images/bali-soap-holder.png',
-      '/images/products Images/bali-soap-holder-thumb.png',
+      '/images/storeImages/products/bali-soap-holder.png',
+      '/images/storeImages/products/bali-soap-holder-thumb.png',
     ],
     description:
       'A sleek wall-mounted soap holder crafted from premium 304 stainless steel. Designed to keep your soap dry and your bathroom tidy.',
@@ -41,10 +41,10 @@ export const products = [
     name: 'Bali Soap Dispenser',
     category: 'soap-dispensers',
     sku: 'WA-SD-001',
-    image: '/images/products Images/bali-soap-dispenser.png',
+    image: '/images/storeImages/products/bali-soap-dispenser.png',
     gallery: [
-      '/images/products Images/bali-soap-dispenser.png',
-      '/images/products Images/bali-soap-dispenser-thumb.png',
+      '/images/storeImages/products/bali-soap-dispenser.png',
+      '/images/storeImages/products/bali-soap-dispenser-thumb.png',
     ],
     description:
       'A premium wall-mounted soap dispenser with a smooth pump mechanism. Ideal for modern bathrooms and commercial restrooms.',
@@ -70,10 +70,10 @@ export const products = [
     name: 'Bali Towel Ring',
     category: 'towel-rings',
     sku: 'WA-TR-001',
-    image: '/images/products Images/bali-towel-rings.png',
+    image: '/images/storeImages/products/bali-towel-rings.png',
     gallery: [
-      '/images/products Images/bali-towel-rings.png',
-      '/images/products Images/bali-towel-rings-thumb.png',
+      '/images/storeImages/products/bali-towel-rings.png',
+      '/images/storeImages/products/bali-towel-rings-thumb.png',
     ],
     description:
       'A polished towel ring that adds a touch of elegance to any bathroom. Sturdy and corrosion-resistant.',
@@ -99,10 +99,10 @@ export const products = [
     name: 'Bali Double Towel Rod',
     category: 'double-towel-rods',
     sku: 'WA-DTR-001',
-    image: '/images/products Images/bali-double-towel-rod.png',
+    image: '/images/storeImages/products/bali-double-towel-rod.png',
     gallery: [
-      '/images/products Images/bali-double-towel-rod.png',
-      '/images/products Images/bali-double-towel-rod-thumb.png',
+      '/images/storeImages/products/bali-double-towel-rod.png',
+      '/images/storeImages/products/bali-double-towel-rod-thumb.png',
     ],
     description:
       'A space-saving double towel rod that holds two towels in style. Perfect for family bathrooms.',
@@ -128,10 +128,10 @@ export const products = [
     name: 'Bali Glass Shelf',
     category: 'glass-shelves',
     sku: 'WA-GS-001',
-    image: '/images/products Images/bali-glass-shelf.png',
+    image: '/images/storeImages/products/bali-glass-shelf.png',
     gallery: [
-      '/images/products Images/bali-glass-shelf.png',
-      '/images/products Images/bali-glass-shelf-thumb.png',
+      '/images/storeImages/products/bali-glass-shelf.png',
+      '/images/storeImages/products/bali-glass-shelf-thumb.png',
     ],
     description:
       'A tempered glass shelf with sturdy stainless steel brackets for a modern, airy look.',
@@ -157,10 +157,10 @@ export const products = [
     name: 'Bali Corner Shelf',
     category: 'corner-shelves',
     sku: 'WA-CS-001',
-    image: '/images/products Images/bali-corner-shelf.png',
+    image: '/images/storeImages/products/bali-corner-shelf.png',
     gallery: [
-      '/images/products Images/bali-corner-shelf.png',
-      '/images/products Images/bali-corner-shelf-thumb.png',
+      '/images/storeImages/products/bali-corner-shelf.png',
+      '/images/storeImages/products/bali-corner-shelf-thumb.png',
     ],
     description:
       'Maximize unused corner space with this elegant corner shelf. Perfect for bottles and toiletries.',
@@ -186,10 +186,10 @@ export const products = [
     name: 'Bali Robe Hook',
     category: 'robe-hooks',
     sku: 'WA-RH-001',
-    image: '/images/products Images/bali-robe-hook.png',
+    image: '/images/storeImages/products/bali-robe-hook.png',
     gallery: [
-      '/images/products Images/bali-robe-hook.png',
-      '/images/products Images/bali-robe-hook-thumb.png',
+      '/images/storeImages/products/bali-robe-hook.png',
+      '/images/storeImages/products/bali-robe-hook-thumb.png',
     ],
     description:
       'A sturdy robe hook with a classic design. Holds robes, towels, and bags with ease.',
@@ -215,10 +215,10 @@ export const products = [
     name: 'Bali Paper Holder',
     category: 'paper-holders',
     sku: 'WA-PH-001',
-    image: '/images/products Images/bali-paper-holder.png',
+    image: '/images/storeImages/products/bali-paper-holder.png',
     gallery: [
-      '/images/products Images/bali-paper-holder.png',
-      '/images/products Images/bali-paper-holder-thumb.png',
+      '/images/storeImages/products/bali-paper-holder.png',
+      '/images/storeImages/products/bali-paper-holder-thumb.png',
     ],
     description:
       'A smooth-rotating toilet paper holder with a spring-loaded arbor for quick refills.',
@@ -244,10 +244,10 @@ export const products = [
     name: 'Bali Grab Bar',
     category: 'grab-bars',
     sku: 'WA-GB-001',
-    image: '/images/products Images/bali-grab-bar.png',
+    image: '/images/storeImages/products/bali-grab-bar.png',
     gallery: [
-      '/images/products Images/bali-grab-bar.png',
-      '/images/products Images/bali-grab-bar-thumb.png',
+      '/images/storeImages/products/bali-grab-bar.png',
+      '/images/storeImages/products/bali-grab-bar-thumb.png',
     ],
     description:
       'A safety grab bar engineered for accessibility and support in bathrooms and showers.',
@@ -273,10 +273,10 @@ export const products = [
     name: 'Bali Bathroom Set',
     category: 'bathroom-sets',
     sku: 'WA-BS-001',
-    image: '/images/products Images/bali-bathroom-set.png',
+    image: '/images/storeImages/products/bali-bathroom-set.png',
     gallery: [
-      '/images/products Images/bali-bathroom-set.png',
-      '/images/products Images/bali-bathroom-set-thumb.png',
+      '/images/storeImages/products/bali-bathroom-set.png',
+      '/images/storeImages/products/bali-bathroom-set-thumb.png',
     ],
     description:
       'A coordinated bathroom set including soap holder, towel ring, and paper holder for a cohesive look.',
@@ -302,10 +302,10 @@ export const products = [
     name: 'Orion Luxury Towel Rod',
     category: 'luxury-collection',
     sku: 'WA-LX-001',
-    image: '/images/products Images/orion-luxury-towel-rod.png',
+    image: '/images/storeImages/products/orion-luxury-towel-rod.png',
     gallery: [
-      '/images/products Images/orion-luxury-towel-rod.png',
-      '/images/products Images/orion-luxury-towel-rod-thumb.png',
+      '/images/storeImages/products/orion-luxury-towel-rod.png',
+      '/images/storeImages/products/orion-luxury-towel-rod-thumb.png',
     ],
     description:
       'A premium luxury towel rod with a polished gold finish for a high-end bathroom aesthetic.',
@@ -331,10 +331,10 @@ export const products = [
     name: 'Orion Premium Mirror Cabinet',
     category: 'mirror-cabinets',
     sku: 'WA-MC-001',
-    image: '/images/products Images/orion-premium-mirror-cabinet.png',
+    image: '/images/storeImages/products/orion-premium-mirror-cabinet.png',
     gallery: [
-      '/images/products Images/orion-premium-mirror-cabinet.png',
-      '/images/products Images/orion-premium-mirror-cabinet-thumb.png',
+      '/images/storeImages/products/orion-premium-mirror-cabinet.png',
+      '/images/storeImages/products/orion-premium-mirror-cabinet-thumb.png',
     ],
     description:
       'A premium mirror cabinet with soft-close door and integrated storage. A statement piece for modern bathrooms.',

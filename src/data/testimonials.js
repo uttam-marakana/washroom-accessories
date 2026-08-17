@@ -10,7 +10,7 @@ export const testimonials = [
     rating: 5,
     quote:
       'The quality of the washroom accessories is outstanding. My clients love the modern, premium look. Highly recommended!',
-    avatar: '/images/placeholders/avatar.webp',
+    avatar: '/images/storeImages/placeholders/testimonial-user-dm.png',
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ export const testimonials = [
     rating: 5,
     quote:
       'We furnished 200 rooms with their accessories. Durable, elegant, and the bulk pricing was excellent. Great partnership.',
-    avatar: '/images/placeholders/avatar.webp',
+    avatar: '/images/storeImages/placeholders/testimonial-user-m.png',
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ export const testimonials = [
     rating: 5,
     quote:
       'Beautiful products and easy to install. The grab bars and towel rods look fantastic in our renovated bathroom.',
-    avatar: '/images/placeholders/avatar.webp',
+    avatar: '/images/storeImages/placeholders/testimonial-user-fm.png',
   },
   {
     id: 4,
@@ -40,6 +40,6 @@ export const testimonials = [
     rating: 4,
     quote:
       'Consistent quality and reliable supply. Their catalog covers everything we need for commercial projects.',
-    avatar: '/images/placeholders/avatar.webp',
+    avatar: '/images/storeImages/placeholders/testimonial-user-m.png',
   },
 ];

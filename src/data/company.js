@@ -8,7 +8,7 @@ export const company = {
   tagline: APP_CONFIG.tagline,
   description:
     'We manufacture premium stainless steel washroom accessories for residential and commercial spaces. From soap holders to grab bars, our products combine durability, modern design, and superior craftsmanship.',
-  foundedYear: 2005,
+  foundedYear: 2019,
   phone: APP_CONFIG.phone,
   phoneHref: APP_CONFIG.phoneHref,
   whatsapp: APP_CONFIG.whatsapp,
@@ -43,9 +43,9 @@ export const company = {
     },
   ],
   statistics: [
-    { label: 'Years in Business', value: 20 },
+    { label: 'Years in Business', value: 7.5 },
     { label: 'Products', value: 500 },
-    { label: 'Happy Clients', value: 12000 },
-    { label: 'Countries Served', value: 35 },
+    { label: 'Happy Clients', value: 10000 },
+    { label: 'Countries Served', value: 20 },
   ],
 };
