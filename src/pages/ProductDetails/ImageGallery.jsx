@@ -13,7 +13,7 @@ import './ProductDetails.css';
 function ImageGallery({ images, alt }) {
   const [active, setActive] = useState(0);
   const gallery =
-    images.length > 0 ? images : ['/images/placeholders/no-image.webp'];
+    images.length > 0 ? images : ['/images/placeholders/no-image.svg'];
 
   return (
     <div className="product-gallery">

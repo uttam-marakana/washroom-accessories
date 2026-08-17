@@ -6,21 +6,21 @@ import Hero from '@/components/Hero/Hero';
 const heroSlides = [
   {
     image:
-      '/images/products%20Images/Home-hero-banner1.png',
+      '/images/storeImages/heroBanners/Home-hero-banner1.png',
     title: 'Premium Washroom Accessories for Modern Living',
     subtitle:
       'Discover durable, elegant, and beautifully crafted washroom fixtures for your home and business.',
   },
   {
     image:
-      '/images/products%20Images/Home-hero-banner2.png',
+      '/images/storeImages/heroBanners/Home-hero-banner2.png',
     title: 'Elevate Your Bathroom Experience',
     subtitle:
       'Explore our curated collection of premium fixtures designed to blend style with functionality.',
   },
   {
     image:
-      '/images/products%20Images/Home-hero-banner3.png',
+      '/images/storeImages/heroBanners/Home-hero-banner3.png',
     title: 'Style Meets Durability',
     subtitle:
       'From grab bars to towel rods, find the perfect accessories to complete your space.',

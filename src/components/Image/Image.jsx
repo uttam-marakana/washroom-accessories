@@ -13,7 +13,7 @@ import './Image.css';
 function Image({
   src,
   alt,
-  fallbackSrc = '/images/placeholders/no-image.webp',
+  fallbackSrc = '/images/placeholders/no-image.svg',
   aspectRatio,
   className,
   ...rest
